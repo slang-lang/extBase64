@@ -20,10 +20,6 @@ Extension::Extension()
 	mName = "base64 (using base64 2.rc.08)";
 }
 
-Extension::~Extension()
-{
-}
-
 void Extension::initialize( Slang::IScope* scope )
 {
 	//std::cout << "Extension::initialize()" << std::endl;

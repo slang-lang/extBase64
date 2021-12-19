@@ -4,7 +4,7 @@
 
 
 // Library includes
-#include <base64.h>
+#include <base64.hpp>
 
 // Project includes
 #include <Core/Designtime/BuildInTypes/BoolObject.h>
@@ -25,11 +25,11 @@ class base64_encode : public Extensions::ExtensionMethod
 {
 public:
     base64_encode()
-    : ExtensionMethod( 0, "base64_encode", Designtime::StringObject::TYPENAME )
+    : ExtensionMethod( nullptr, "base64_encode", Designtime::StringObject::TYPENAME )
     {
         ParameterList params;
         params.push_back( Parameter::CreateDesigntime( "code", Designtime::StringObject::TYPENAME ) );
-        params.push_back( Parameter::CreateDesigntime( "url", Designtime::BoolObject::TYPENAME, false ) );
+        params.push_back( Parameter::CreateDesigntime( "url", Designtime::BoolObject::TYPENAME, Slang::Runtime::AtomicValue( false ), true ) );
 
         setSignature( params );
     }

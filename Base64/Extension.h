@@ -21,7 +21,7 @@ class Extension : public Slang::Extensions::AExtension
 {
 public:
     Extension();
-    ~Extension();
+    ~Extension() = default;
 
 public:
     void initialize( Slang::IScope* scope );
