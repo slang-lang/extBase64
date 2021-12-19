@@ -15,9 +15,9 @@ namespace base64 {
 
 
 Extension::Extension()
-: AExtension( "base64", "0.0.0" )
+: AExtension( "extBase64", "0.1.0" )
 {
-	mName = "base64 (using base64 2.rc.08)";
+	mName = "extBase64 (using base64 2.rc.08)";
 }
 
 void Extension::initialize( Slang::IScope* scope )
