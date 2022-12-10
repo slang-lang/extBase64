@@ -16,5 +16,6 @@ endif()
 
 INCLUDE(CMake/Base.cmake)
 
-ADD_SUBDIRECTORY(Base64)
+ADD_SUBDIRECTORY(Extension/Base64)
+ADD_SUBDIRECTORY(Specification)
 

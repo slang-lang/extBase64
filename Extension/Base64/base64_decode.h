@@ -24,8 +24,8 @@ namespace base64 {
 class base64_decode : public Extensions::ExtensionMethod
 {
 public:
-    base64_decode()
-	: ExtensionMethod( nullptr, "base64_decode", Designtime::StringObject::TYPENAME )
+    base64_decode( IScope* parent = nullptr )
+	: ExtensionMethod( parent, "base64_decode", Designtime::StringObject::TYPENAME )
 	{
 		ParameterList params;
 		params.push_back( Parameter::CreateDesigntime( "code", Designtime::StringObject::TYPENAME ) );

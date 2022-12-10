@@ -1,4 +1,4 @@
-INCLUDE(${PROJECT_SOURCE_DIR}/CMake/Base.cmake)
+INCLUDE(../../CMake/Base.cmake)
 
 SET(SOURCES
     Extension.cpp
@@ -21,7 +21,7 @@ SET(MODULES
     slang
 )
 
-add_include(Externals/2.rc.08)
+add_include( Externals/2.rc.08 )
 
 build_shared_lib( SlangBase64 "${MODULES}" )
 

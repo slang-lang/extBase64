@@ -24,8 +24,8 @@ namespace base64 {
 class base64_encode : public Extensions::ExtensionMethod
 {
 public:
-    base64_encode()
-    : ExtensionMethod( nullptr, "base64_encode", Designtime::StringObject::TYPENAME )
+    base64_encode( IScope* parent = nullptr )
+    : ExtensionMethod( parent, "base64_encode", Designtime::StringObject::TYPENAME )
     {
         ParameterList params;
         params.push_back( Parameter::CreateDesigntime( "code", Designtime::StringObject::TYPENAME ) );

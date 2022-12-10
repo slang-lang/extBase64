@@ -1,0 +1,2 @@
+private static string base64_decode( string code modify default, bool removeLinebreaks modify default = 0 ) modify nothrow
+private static string base64_encode( string code modify default, bool url modify default = 0 ) modify nothrow
