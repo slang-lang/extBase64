@@ -1,4 +1,4 @@
-INCLUDE(../../CMake/Base.cmake)
+INCLUDE(${PROJECT_SOURCE_DIR}/CMake/Base.cmake)
 
 SET(SOURCES
     Extension.cpp
