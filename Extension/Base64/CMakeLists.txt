@@ -14,7 +14,7 @@ SET(HEADERS
 )
 
 SET(DEPENDENCIES
-    # no dependencies
+    CoreExtensions
 )
 
 SET(MODULES
@@ -24,4 +24,3 @@ SET(MODULES
 add_include( Externals/2.rc.08 )
 
 build_shared_lib( SlangBase64 "${MODULES}" )
-
