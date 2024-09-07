@@ -14,7 +14,7 @@ SET(HEADERS
 )
 
 SET(DEPENDENCIES
-    # no dependencies
+    CoreExtensions
 )
 
 SET(MODULES
