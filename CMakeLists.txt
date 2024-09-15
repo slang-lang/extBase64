@@ -1,12 +1,6 @@
+cmake_minimum_required(VERSION 3.5)
+
 PROJECT(extBase64)
-
-cmake_minimum_required(VERSION 3.0)
-
-# cmake policy changes. use "cmake --help-policy <policyid>" for details
-if ( CMAKE_VERSION VERSION_LESS "3.0.0" )
-else()
-    cmake_policy(SET CMP0011 NEW)
-endif()
 
 # verbose makefiles
 #SET(CMAKE_VERBOSE_MAKEFILE ON)
@@ -18,4 +12,3 @@ INCLUDE(CMake/Base.cmake)
 
 ADD_SUBDIRECTORY(Extension/Base64)
 ADD_SUBDIRECTORY(Specification)
-
