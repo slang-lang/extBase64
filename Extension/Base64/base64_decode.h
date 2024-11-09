@@ -7,8 +7,7 @@
 #include <base64.hpp>
 
 // Project includes
-#include <Core/Designtime/BuildInTypes/BoolObject.h>
-#include <Core/Designtime/BuildInTypes/StringObject.h>
+#include <Core/Designtime/BuildInTypes/StringType.h>
 #include "Defines.h"
 #include "Types.h"
 
@@ -25,11 +24,11 @@ class base64_decode : public Extensions::ExtensionMethod
 {
 public:
     base64_decode( IScope* parent = nullptr )
-	: ExtensionMethod( parent, "base64_decode", Designtime::StringObject::TYPENAME )
+	: ExtensionMethod( parent, "base64_decode", Designtime::StringType::TYPENAME )
 	{
 		ParameterList params;
-		params.push_back( Parameter::CreateDesigntime( "code", Designtime::StringObject::TYPENAME ) );
-        params.push_back( Parameter::CreateDesigntime( "removeLinebreaks", Designtime::BoolObject::TYPENAME, Slang::Runtime::AtomicValue( false ), true ) );
+		params.push_back( Parameter::CreateDesigntime( "code", Designtime::StringType::TYPENAME ) );
+        params.push_back( Parameter::CreateDesigntime( "removeLinebreaks", Designtime::StringType::TYPENAME, Slang::Runtime::AtomicValue( false ), true ) );
 
 		setSignature( params );
 	}
@@ -45,11 +44,11 @@ public:
             auto param_code = (*it++).value().toStdString();
 			auto param_remove = (*it++).value().toBool();
 
-			*result = Runtime::StringObject( ::base64_decode( param_code, param_remove ) );
+			*result = Runtime::StringType( ::base64_decode( param_code, param_remove ) );
 		}
 		catch ( std::exception& e ) {
-            Runtime::Object *data = Controller::Instance().repository()->createInstance( Runtime::StringObject::TYPENAME, ANONYMOUS_OBJECT );
-            *data = Runtime::StringObject( std::string( e.what() ) );
+            Runtime::Object *data = Controller::Instance().repository()->createInstance( Runtime::StringType::TYPENAME, ANONYMOUS_OBJECT );
+            *data = Runtime::StringType( std::string( e.what() ) );
 
             Controller::Instance().thread( threadId )->exception() = Runtime::ExceptionData( data, token.position() );
             return Runtime::ControlFlow::Throw;

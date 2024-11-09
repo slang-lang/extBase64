@@ -9,8 +9,8 @@
 // Namespace declarations
 
 
-namespace base64 {
-
+namespace base64
+{
 
 
 }
