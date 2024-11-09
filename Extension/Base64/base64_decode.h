@@ -7,6 +7,7 @@
 #include <base64.hpp>
 
 // Project includes
+#include <Core/Designtime/BuildInTypes/BoolType.h>
 #include <Core/Designtime/BuildInTypes/StringType.h>
 #include "Defines.h"
 #include "Types.h"
@@ -28,7 +29,7 @@ public:
 	{
 		ParameterList params;
 		params.push_back( Parameter::CreateDesigntime( "code", Designtime::StringType::TYPENAME ) );
-        params.push_back( Parameter::CreateDesigntime( "removeLinebreaks", Designtime::StringType::TYPENAME, Slang::Runtime::AtomicValue( false ), true ) );
+		params.push_back( Parameter::CreateDesigntime( "removeLinebreaks", Designtime::BoolType::TYPENAME, Slang::Runtime::AtomicValue( false ), true ) );
 
 		setSignature( params );
 	}
@@ -41,17 +42,17 @@ public:
 		try {
 			ParameterList::const_iterator it = list.begin();
 
-            auto param_code = (*it++).value().toStdString();
+			auto param_code = (*it++).value().toStdString();
 			auto param_remove = (*it++).value().toBool();
 
 			*result = Runtime::StringType( ::base64_decode( param_code, param_remove ) );
 		}
 		catch ( std::exception& e ) {
-            Runtime::Object *data = Controller::Instance().repository()->createInstance( Runtime::StringType::TYPENAME, ANONYMOUS_OBJECT );
-            *data = Runtime::StringType( std::string( e.what() ) );
+			Runtime::Object *data = Controller::Instance().repository()->createInstance( Runtime::StringType::TYPENAME, ANONYMOUS_OBJECT );
+			*data = Runtime::StringType( std::string( e.what() ) );
 
-            Controller::Instance().thread( threadId )->exception() = Runtime::ExceptionData( data, token.position() );
-            return Runtime::ControlFlow::Throw;
+			Controller::Instance().thread( threadId )->exception() = Runtime::ExceptionData( data, token.position() );
+			return Runtime::ControlFlow::Throw;
 		}
 
 		return Runtime::ControlFlow::Normal;
