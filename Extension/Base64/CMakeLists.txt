@@ -21,6 +21,6 @@ SET(MODULES
     slang
 )
 
-add_include( Externals/2.rc.08 )
+add_include( Externals/2.rc.09 )
 
 build_shared_lib( SlangBase64 "${MODULES}" )
