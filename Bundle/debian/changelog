@@ -1,4 +1,4 @@
-slang-base64 (0.9.3) noble; urgency=medium
+slang-base64 (0.1.3) noble; urgency=medium
 
   * Refactored debian package structure
 
