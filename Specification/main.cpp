@@ -2,7 +2,7 @@
 // Library includes
 
 // Project includes
-#include <Base64/Extension.h>
+#include <Extension.h>
 
 // Namespace declarations
 
