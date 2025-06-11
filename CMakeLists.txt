@@ -10,5 +10,5 @@ PROJECT(extBase64)
 
 INCLUDE(CMake/Base.cmake)
 
-ADD_SUBDIRECTORY(Extension/Base64)
+ADD_SUBDIRECTORY(Extension)
 ADD_SUBDIRECTORY(Specification)
