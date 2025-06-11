@@ -1,5 +1,6 @@
 
 // Library includes
+#include <iostream>
 
 // Project includes
 #include <Extension.h>

@@ -3,6 +3,7 @@
 #include "Extension.h"
 
 // Library includes
+#include <iostream>
 
 // Project includes
 #include "base64_decode.h"
