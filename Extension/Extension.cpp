@@ -3,6 +3,7 @@
 #include "Extension.h"
 
 // Library includes
+#include <cassert>
 #include <iostream>
 
 // Project includes
@@ -32,7 +33,7 @@ void Extension::initialize( Slang::Extensions::ExtensionNamespace *scope )
 
 void Extension::provideMethods( Slang::Extensions::ExtensionMethods &methods )
 {
-    (void) methods;
+    assert( methods.empty() );
 
     methods.push_back( new base64_decode() );
     methods.push_back( new base64_encode() );
