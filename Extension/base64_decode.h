@@ -9,8 +9,6 @@
 // Project includes
 #include <Core/Designtime/BuildInTypes/BoolType.h>
 #include <Core/Designtime/BuildInTypes/StringType.h>
-#include "Defines.h"
-#include "Types.h"
 
 // Forward declarations
 

@@ -8,8 +8,6 @@
 
 // Project includes
 #include <Core/Designtime/BuildInTypes/StringType.h>
-#include "Defines.h"
-#include "Types.h"
 
 // Forward declarations
 
@@ -44,7 +42,6 @@ public:
         auto param_url = (*it++).value().toBool();
 
         *result = Runtime::StringType( ::base64_encode( param_code, param_url ) );
-
 
         return Runtime::ControlFlow::Normal;
     }

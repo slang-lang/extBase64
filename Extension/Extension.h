@@ -5,7 +5,6 @@
 // Library includes
 
 // Project includes
-#include "Defines.h"
 #include <Core/Extensions/AExtension.h>
 
 // Forward declarations
