@@ -15,7 +15,7 @@
 namespace base64 {
 
 Extension::Extension()
-: AExtension( "extBase64", "0.2.0" )
+: AExtension( "extBase64", "0.2.1" )
 {
     mName = "extBase64 (using base64 2.rc.09)";
 }
